@@ -1,49 +1,59 @@
-const SignupPage = () => {
-  return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
-      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center text-indigo-700">Create Your Account</h2>
+import React from 'react';
+import signupImg from '../assets/signup.jpg'; // ensure correct path
+
+const SignupPage = () => (
+  <div className="min-h-screen flex">
+    {/* Left: Image */}
+    <div
+      className="hidden lg:block lg:w-1/2 bg-cover bg-center"
+      style={{ backgroundImage: `url(${signupImg})` }}
+    />
+    {/* Right: Form */}
+    <div className="flex flex-col justify-center items-center w-full lg:w-1/2 p-8 lg:p-16">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 space-y-6">
+        <h2 className="text-3xl font-extrabold text-gray-900 text-center">
+          Create Your Account
+        </h2>
         <form className="space-y-4">
           <div>
-            <label className="block mb-1 text-gray-700">Name</label>
+            <label className="font-semibold">Name</label>
             <input
               type="text"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              placeholder="Your full name"
+              required
+              className="mt-2 w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500"
             />
           </div>
           <div>
-            <label className="block mb-1 text-gray-700">Email</label>
+            <label className="font-semibold">Email</label>
             <input
               type="email"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              placeholder="Enter your email"
+              required
+              className="mt-2 w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500"
             />
           </div>
           <div>
-            <label className="block mb-1 text-gray-700">Password</label>
+            <label className="font-semibold">Password</label>
             <input
               type="password"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              placeholder="Choose a password"
+              required
+              className="mt-2 w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500"
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition"
+            className="w-full bg-indigo-600 text-white py-3 rounded-full font-semibold hover:bg-indigo-700 transition"
           >
             Sign Up
           </button>
         </form>
-        <p className="text-center mt-4 text-sm text-gray-600">
-          Already have an account?{" "}
-          <a href="/login" className="text-indigo-600 font-semibold hover:underline">
-            Login
+        <p className="text-center text-gray-600">
+          Already have an account?{' '}
+          <a href="/login" className="text-indigo-600 hover:underline">
+            Log in
           </a>
         </p>
       </div>
     </div>
-  );
-};
-
+  </div>
+);
 export default SignupPage;
